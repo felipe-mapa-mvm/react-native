@@ -135,7 +135,8 @@ void dynamicFromValueShallow(
     if (obj.isArray(runtime)) {
       output = folly::dynamic::array();
     } else if (obj.isFunction(runtime)) {
-      throw JSError(runtime, "JS Functions are not convertible to dynamic");
+      // throw JSError(runtime, "JS Functions are not convertible to dynamic");
+      return nullptr;
     } else {
       output = folly::dynamic::object();
     }
